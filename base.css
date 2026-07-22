@@ -1,0 +1,225 @@
+# Vanguard Business Solutions — Design System
+
+## Company & product context
+
+Vanguard Business Solutions is a **B2B corporate training startup based in Cairo, Egypt** (founder based
+in Jeddah, Saudi Arabia; Cairo ground operations supervised by his brother Kamal). It offers **seven
+customizable training programs**, delivered **in-house, on-site, or remotely under contract-based deals**
+by two full-time in-house trainers (no freelancers).
+
+**Slogan:** *"Engineered to Solve Real-World Operational Challenges."*
+
+**The seven programs:**
+1. Sales
+2. Customer Service & Retention
+3. Leadership
+4. Time Management
+5. Marketing
+6. AI Integration — *the intended market door-opener / lead program*
+7. English for Business
+
+**Market & money:** the Egyptian corporate training market; all pricing is in **Egyptian pounds (EGP)**.
+Clients are Egyptian companies buying training under contract for their teams. Deals are typically
+quarterly contract-value engagements (sales commission runs 2% up to EGP 200,000 of quarterly contract
+value, 4% above).
+
+**Bilingual note:** an Arabic version of brand assets (banner, profile, About copy) is a planned
+next step — designs should be built to accommodate Arabic (RTL) copy later even though current assets
+are English-only.
+
+**Sources provided for this design system:**
+- `uploads/vanguard_logo_flat_v.html` — specimen board for the primary "flat V" logo lockup (navy + gold two-tone mark, "VANGUARD BUSINESS SOLUTIONS" wordmark in Exo 2).
+- `uploads/vanguard_linkedin_profile_icon_v2.svg` — the square profile-icon version of the mark (navy field, white + gold V).
+- `guidelines/business-context/brand-linkedin-brief.md` — brand/logo decision log + LinkedIn asset notes (from the founder's brand session).
+- `guidelines/business-context/company-project-brief.md` — the company/business-plan brief (market, staffing, financials, program list) that this system's copy is now based on.
+
+No codebase, Figma file, product screenshots, or existing decks were attached — this system was built
+**from the logo + the two business briefs outward**, extending the navy/gold palette and Exo 2 display
+type into a full token set, component library, and product recreations. The business context (programs,
+geography, EGP pricing, delivery model) is now **real**, taken from the briefs above; the specific
+product UIs (dashboard/portal layouts, screen flows) remain **a proposed system**, since no existing
+Vanguard product was supplied. Flag anything that should match a real product if one gets built.
+
+## Products represented
+
+1. **Marketing website** (`ui_kits/marketing/`) — public homepage: hero, programs, approach, results, about, footer.
+2. **Client dashboard** (`ui_kits/dashboard/`) — the internal web app program directors/facilitators use: home, cohorts, library, reports, settings, behind a navy sidebar shell.
+3. **Client portal** (`ui_kits/portal/`) — the client-facing (client company's HR/L&D contact) view: documents, invoices (EGP), reports.
+4. **Slide template** (`ui_kits/slides/`) — four pitch/proposal-deck slide layouts (title, agenda, stats, big quote) in the brand style.
+
+Internally Vanguard runs lean (founder + Kamal + 2 trainers + a Sales/BD Executive + an admin
+coordinator), so the dashboard/portal are framed as **lightweight client + contract tracking tools**,
+not heavy enterprise LMS software.
+
+## Index
+
+- `styles.css` — root stylesheet; `@import`s everything below. Link this one file to consume the whole system.
+- `tokens/` — `colors.css`, `typography.css`, `fonts.css`, `spacing.css`, `effects.css`, `base.css`.
+- `assets/logo/` — logo lockups and mark, light + on-navy versions, as SVG.
+- `assets/icons/` — supplied LinkedIn profile icon.
+- `guidelines/` — 14 foundation specimen cards (colors, type, spacing, radii, shadows, brand) shown in the Design System tab.
+- `guidelines/business-context/` — the two source business briefs (brand/LinkedIn + company/business plan) saved for continuity.
+- `components/` — reusable React primitives, grouped by concern:
+  - `icons/` — `Icon` (curated Lucide-derived set, 26 icons)
+  - `forms/` — `Button`, `IconButton`, `Input`, `Textarea`, `Select`, `Checkbox`, `Radio`, `Switch`
+  - `core/` — `Card`, `Badge`, `Tag`, `Avatar`
+  - `feedback/` — `Dialog`, `Toast`, `Tooltip`, `ProgressBar`
+  - `navigation/` — `Tabs`, `Sidebar`
+  - `data/` — `Table`
+- `ui_kits/marketing/`, `ui_kits/dashboard/`, `ui_kits/portal/`, `ui_kits/slides/` — product recreations described above.
+- `SKILL.md` — portable skill file for using this system in Claude Code.
+
+### Components (full list)
+
+Icon, Button, IconButton, Input, Textarea, Select, Checkbox, Radio, Switch, Card, Badge, Tag, Avatar,
+Dialog, Toast, Tooltip, ProgressBar, Tabs, Sidebar, Table.
+
+### Intentional additions
+
+No component source (codebase or Figma) was attached, so this is a from-scratch standard set sized to
+a B2B training company's needs (forms + core + feedback + navigation + one data table) — every component
+above is an intentional addition rather than a copy of an existing inventory.
+
+## Content fundamentals
+
+**Voice:** Direct, outcome-oriented, plain business English — the copy reads like a trainer/consultant
+briefing a client, not a marketing brochure. Sentences are short. It leans on the slogan's promise
+("engineered to solve real-world operational challenges") — concrete operational outcomes over vague
+self-improvement language. Where numbers exist they're used; where they don't (this is an early-stage
+startup), credibility comes from specificity about *how* programs are delivered, not invented metrics.
+
+**Point of view:** Third person for the company ("Vanguard designs...") in marketing copy; second person
+("you," "your team") when addressing the reader directly in CTAs and app copy ("Track your cohort's
+progress"). Internal app copy (dashboard/portal) is first-person-plural where the user is part of a team
+("Our facilitators," "your organization").
+
+**Casing:** Sentence case for headings and buttons ("Book a consultation," not "Book A Consultation").
+Section eyebrows (small labels above headings, e.g. "PROGRAMS," "RESULTS") are the one deliberate
+exception — small caps, wide letter-spacing, always gold-colored.
+
+**Tone:** Confident but not hyperbolic. No exclamation points. No "revolutionize," "game-changing,"
+"synergy," or similar consulting-speak — credibility comes from specificity (named programs, delivery
+modes, real operational problems solved) rather than superlatives. As an early-stage startup, avoid
+invented traction claims (fake client counts, fabricated success percentages) — the placeholders in the
+UI kits are clearly illustrative and should be replaced with real numbers only once they exist.
+
+**Emoji:** Never used. This is a B2B corporate-training brand; emoji would undercut the positioning.
+
+**Language:** Currently English. An Arabic (RTL) version is a planned next step — keep layouts flexible
+enough to mirror, and avoid baking left-alignment assumptions into anything that would need to flip.
+
+**Example copy already in the system:**
+- Slogan: "Engineered to Solve Real-World Operational Challenges."
+- Hero: "Corporate training engineered to solve real operational problems"
+- Program card (AI Integration): "Get your team productive with AI tools — practical, role-specific workflows, not hype."
+- CTA: "Ready to see if we're a fit?" (a genuine question, not a hard sell)
+- Pricing/data: shown in EGP (e.g. "EGP 180,000 / quarter"), never USD.
+
+## Visual foundations
+
+**Colors:** Navy (`#0B2545`) is the dominant brand color — used for the logo, primary buttons, sidebar,
+inverse sections, and headline text. Gold (`#C9A227`) is a strict accent: section eyebrows, the single
+highest-emphasis CTA per screen, active-state indicators (tab underline, sidebar left-border), and chart
+highlights. Gold is never used as a large background fill or for body text — treat it as seasoning, not
+a base color. Neutrals are cool grays hue-matched to the navy (not pure gray) so surfaces feel like part
+of the same family. See `guidelines/colors-*.html` for full ramps.
+
+**Type:** Exo 2 (bold, geometric, slightly technical) for all headlines/display type and the wordmark —
+used sparingly, only at 22px and above. Inter for everything else (body copy, UI labels, table cells,
+buttons) — chosen because Exo 2 gets fatiguing at small sizes/long copy, and Inter's neutrality lets the
+navy/gold palette and Exo 2 headlines carry the brand distinctiveness instead.
+
+**Spacing:** 4px base unit (`--space-1` = 2px up to `--space-14` = 128px). Card interior padding defaults
+to 24px (`--space-7`); stacked-element gaps default to 12px (`--space-4`). Section vertical rhythm on the
+marketing site is generous — 80–96px between major sections — to keep the "confident, uncluttered
+corporate" feel rather than a dense SaaS-dashboard density (the dashboard/portal are allowed to be
+denser since they're task tools, not persuasion surfaces).
+
+**Backgrounds:** No photography was supplied, so none is used — sections alternate between white,
+a very light cool-gray sunken surface (`--surface-sunken`), and full navy (`--surface-inverse`) for the
+hero, CTA, and slide "cover" moments. No gradients, no textures, no patterns. Full-bleed color blocks
+only — this is intentional: the brand is confident enough to rest on flat color and typography.
+
+**Animation:** Minimal and utilitarian — background/border-color transitions on hover (120–200ms,
+`--ease-standard`, a gentle ease-out curve), a card lift + shadow deepen on hover for clickable cards,
+width transitions on progress bars (320ms), and a sliding toggle knob on `Switch`. Nothing bounces, nothing
+loops decoratively — motion always communicates a state change, never plays for its own sake.
+
+**Hover states:** Buttons and interactive surfaces darken one step (primary navy → darker navy, gold →
+darker gold) rather than lightening or fading to transparency — this reads as "solid and confident"
+rather than "light and airy." Ghost/ ﻿icon buttons go from transparent to a light gray fill on hover.
+
+**Press/active states:** One step darker again than hover (e.g. `--brand-primary-active` is darker than
+`--brand-primary-hover`). No scale/shrink on press — this brand doesn't use squash-and-stretch
+micro-interactions; state changes are purely color-based.
+
+**Borders:** Thin (1–1.5px), always a neutral gray (`--border-default` / `--border-strong`), never
+colored, except the deliberate gold-tinted focus ring and the gold active-tab underline / gold
+sidebar-active left-border — those two are the *only* places a colored border appears.
+
+**Shadows:** Navy-tinted (not pure black) at low opacity and tight blur radius — `--shadow-sm` through
+`--shadow-xl` — giving a crisp, precise, "well-produced" feel rather than a soft, diffuse one. Cards use
+`--shadow-sm` at rest and step up to `--shadow-md` on hover when interactive.
+
+**Corner radii:** Modest and businesslike — 4px (inputs/small chips) to 16px (large cards), plus a pill
+radius reserved for badges/switches/tags. Nothing is fully square (0 radius) and nothing defaults to
+pill-shaped buttons — this avoids both "cold enterprise software" and "consumer app" extremes.
+
+**Cards:** White surface, 1px `--border-default`, 12px radius, `--shadow-sm` at rest. Clickable cards
+(`hover` prop) lift 2px and deepen to `--shadow-md`. No colored left-border accent strips — status is
+communicated via a `Badge`, not a border color.
+
+**Transparency & blur:** Used exactly once by design — the marketing site header is a translucent white
+with backdrop blur so it stays legible while scrolling over the page below. Modal/dialog scrims use a
+semi-transparent navy overlay (`--surface-overlay`) rather than pure black, keeping the brand hue present
+even in overlay states.
+
+**Imagery color vibe:** No imagery was supplied. If/when real photography is added, it should be
+warm-neutral and naturalistic (real training sessions, not stock-photo handshakes) — avoid cool blue
+color grading, which would fight the navy brand color for attention; avoid black-and-white, which would
+read as too austere for this brand's "confident, human" tone.
+
+## Iconography
+
+No icon font, sprite sheet, or SVG set was supplied with the brand. This system uses a curated ~26-icon
+subset of **Lucide** (open-source, ISC license), inlined directly in `components/icons/Icon.jsx` as
+stroke-based SVG path data (24×24, 2px stroke, round caps/joins) — chosen because its clean, moderate
+stroke weight matches the flat, geometric character of the logo mark without adding a second competing
+visual style. This authoring environment can't fetch a CDN at build time, so the icons are embedded
+inline rather than linked; a consuming project with network access may instead load
+`https://unpkg.com/lucide@latest/dist/umd/lucide.js` directly.
+
+Icons are always monochrome, `currentColor`, and used at 14–20px inline with text or inside a
+44×44 (or smaller, 28–40px) tinted square "icon tile" for feature/stat callouts (see the marketing
+Programs section or dashboard stat cards). Emoji and Unicode symbol characters (aside from the ×
+dismiss glyph on `Tag`/`Toast`, and the typographic quote mark on the Big Quote slide) are never used
+as icons or standalone content — this is a professional B2B tool, not a consumer app.
+
+## Caveats & where I need your help
+
+- **No codebase, Figma, product screenshots, or slide deck were attached** — everything beyond the two
+  logo files (palette ramps, type scale, all components, all four UI kits, and the slide templates) is
+  a from-scratch system built to match the brand's logo and your answers about tone/products, not a
+  recreation of an existing Vanguard product. If a real Vanguard app/site/deck already exists, please
+  attach it (a GitHub repo, Figma link, or screenshots) so I can correct anything that diverges.
+- **Fonts are loaded live from Google Fonts** (Exo 2 + Inter, pinned `@font-face` src to Google's CDN,
+  with a CSS2-import fallback) rather than self-hosted binaries — I didn't have font files to copy in.
+  If you have licensed/self-hosted copies of Exo 2 and Inter, send them and I'll swap in local
+  `@font-face` files.
+  Google Fonts' hosted `.woff2` filenames rotate periodically — if the pinned URL in `tokens/fonts.css`
+  ever 404s, the CSS2 `@import` fallback in the same file keeps both families working.
+- **Body font (Inter) is my pairing choice, not a supplied spec** — Exo 2 (given) is a display-only face;
+  I chose Inter as a neutral, highly legible workhorse that doesn't compete with it. Tell me if you'd
+  rather pair with a serif or a warmer geometric sans.
+- **Icons are a Lucide substitution**, not a Vanguard-supplied set (see Iconography above) — flagged per
+  the standard substitution policy.
+- All copy, data, and names in the UI kits are illustrative placeholders — the **program names,
+  delivery model, EGP currency, and Egyptian-market framing are now real** (from the business briefs),
+  but specific client names, contract figures, and any success percentages are invented for layout
+  purposes and must be replaced with real values before any external use.
+
+**My ask:** the business context is now folded in from the two briefs. Next, tell me (1) which surface to
+push on first — the **marketing site** (likely the real near-term need, per the briefs' "begin website
+structure/content" item) or the internal tools; and (2) whether to draft a proper **AI Integration
+program** landing/one-pager, since the briefs name it as the market door-opener. I can also produce the
+**Arabic (RTL)** brand variant when you're ready.

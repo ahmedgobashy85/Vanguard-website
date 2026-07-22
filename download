@@ -1,0 +1,28 @@
+/* ============================================================
+   VANGUARD BUSINESS SOLUTIONS — WEBFONTS
+   Display: Exo 2 (as specified in the brand's logo lockup file).
+   Body/UI: Inter — neutral, highly legible workhorse sans that
+   pairs cleanly with Exo 2's geometric character without competing
+   with it. Both are Google Fonts, loaded here as direct @font-face
+   rules against Google's font CDN so the closure is self-declared.
+   ============================================================ */
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/exo2/v22/7cH1v4okm5zmbtYtMWzZ2cydcCM9YFo2ZlU.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');
+}
+
+/* Fallback: if the pinned woff2 URLs above ever go stale, this CSS2
+   import guarantees both families still resolve. */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
